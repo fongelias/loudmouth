@@ -1,0 +1,16 @@
+{
+  "name": "loudmouth",
+  "version": "1.0.1",
+  "description": "Telemetry module for Node",
+  "main": "index.js",
+  "scripts": {
+    "test": "BABEL_ENV=test mocha --compilers js:babel-core/register ./**/*.test.js"
+  },
+  "keywords": [
+    "telemetry",
+    "node",
+    "js"
+  ],
+  "author": "Elias Fong <fongelias@gmail.com> (https://fongelias.github.io/)",
+  "license": "MIT"
+}
