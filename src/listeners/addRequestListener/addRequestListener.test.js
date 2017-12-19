@@ -42,4 +42,6 @@ describe('addRequestListener()', () => {
 
 		assert(listenerCount == 1);
 	});
+
+	
 })
