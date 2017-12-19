@@ -19,6 +19,6 @@ export function addTraceListener(emitter, url, appName, apiKey) {
 	}
 
 	emitter.on(listeners.events.traceListener, (args) => {
-		sendTelemetry(url, appName, apiKey, args);
+		sendTelemetry(url, appName, args, apiKey);
 	})
 }

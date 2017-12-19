@@ -8,7 +8,7 @@ https request wrapper for sending telemetry
 @param {string} apiKey - the api key used to access the url
 @return {Promise} requestPromise - a promise that resolves on the completion of the request
 */
-export function sendTelemetry(url, appName, apiKey) {
+export function sendTelemetry(url, appName, body, apiKey) {
 
 	//argument check
 	if(!(url instanceof URL)) {
@@ -28,6 +28,11 @@ export function sendTelemetry(url, appName, apiKey) {
 			path: url.path,
 			method: 'POST',
 			auth: apiKey, //TODO Review this later
+			headers: { //TODO Review this later
+				'Accept': 'application/json',
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(body),
 		}
 
 		https.request(requestOptions, (res) => {
