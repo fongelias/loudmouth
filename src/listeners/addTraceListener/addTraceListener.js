@@ -18,7 +18,7 @@ export function addTraceListener(emitter, url, appName, apiKey) {
 		throw new Error('addTraceListener: argument is not an EventEmitter');
 	}
 
-	emitter.on(listeners.events.traceListener, () => {
-		sendTelemetry(url, appName, apiKey);
+	emitter.on(listeners.events.traceListener, (args) => {
+		sendTelemetry(url, appName, apiKey, args);
 	})
 }
