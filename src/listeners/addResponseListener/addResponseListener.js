@@ -18,7 +18,7 @@ export function addResponseListener(emitter, url, appName, apiKey) {
 		throw new Error('addResponseListener: argument is not an EventEmitter');
 	}
 
-	emitter.on(listeners.events.responseListener, () => {
-		sendTelemetry(url, appName, apiKey);
+	emitter.on(listeners.events.responseListener, (args) => {
+		sendTelemetry(url, appName, apiKey, args);
 	})
 }
