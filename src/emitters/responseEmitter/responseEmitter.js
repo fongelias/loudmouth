@@ -2,7 +2,7 @@ import { EventEmitter } from 'events';
 
 import { listeners } from '../../config';
 
-export function responseEmitter(emitter, status, requestType, endpointUri, body = "") {
+export function responseEmitter(emitter, status, endpointUri, requestType = "", body = "") {
 	if(!(emitter instanceof EventEmitter)) {
 		throw new Error('responseEmitter: emitter argument is not an instance of EventEmitter');
 	}

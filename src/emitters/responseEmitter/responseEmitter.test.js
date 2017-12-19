@@ -17,7 +17,7 @@ describe('responseEmitter()', () => {
 		let isEmitted = false;
 		emitter.on(listeners.events.responseListener, () => { isEmitted = true; });
 
-		responseEmitter(emitter, status, requestType.GET, endpointUri, body);
+		responseEmitter(emitter, status, endpointUri, requestType.GET, body);
 
 		assert(isEmitted);
 	});
@@ -29,7 +29,7 @@ describe('responseEmitter()', () => {
 			hasStatus = argObj.status ? true : false; 
 		});
 
-		responseEmitter(emitter, status, requestType.GET, endpointUri, body);
+		responseEmitter(emitter, status, endpointUri, requestType.GET, body);
 
 		assert(hasStatus);
 	})
@@ -41,7 +41,7 @@ describe('responseEmitter()', () => {
 			hasRequestType = argObj.requestType ? true : false; 
 		});
 
-		responseEmitter(emitter, status, requestType.GET, endpointUri, body);
+		responseEmitter(emitter, status, endpointUri, requestType.GET, body);
 
 		assert(hasRequestType);
 	})
@@ -53,7 +53,7 @@ describe('responseEmitter()', () => {
 			hasUri = argObj.endpointUri ? true : false; 
 		});
 
-		responseEmitter(emitter, status, requestType.GET, endpointUri, body);
+		responseEmitter(emitter, status, endpointUri, requestType.GET, body);
 
 		assert(hasUri);
 	})
@@ -65,7 +65,7 @@ describe('responseEmitter()', () => {
 			hasBody = argObj.body ? true : false; 
 		});
 
-		responseEmitter(emitter, status, requestType.GET, endpointUri, body);
+		responseEmitter(emitter, status, endpointUri, requestType.GET, body);
 
 		assert(hasBody);
 	})
